@@ -6,7 +6,7 @@ sourceCompatibility = 1.8
 
 ext {
     env = System.getProperty("env") == null ? "development" : System.getProperty("env")
-    mavenUrl = 'https://...'
+    mavenUrl = 'https://maven.aliyun.com/repository/public'
     lombokVersion = '1.18.24'
     jacksonVersion = '2.13.3'
     junitVersion = '4.13.2'
@@ -28,11 +28,11 @@ buildscript {
     ext {
         springBootVersion = '2.7.0'
         dependencyManagementPluginVersion = '1.0.11.RELEASE'
-        mavenUrl = 'https://...'
+        mavenUrl = 'https://maven.aliyun.com/repository/public'
     }
     repositories {
+        maven { url "$mavenUrl" }
         mavenCentral()
-//        maven { url "$mavenUrl/repository/maven-public/" }
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -110,8 +110,8 @@ subprojects {
     }
 
     repositories {
+        maven { url "$mavenUrl" }
         mavenCentral()
-//        maven { url "$mavenUrl/repository/maven-public/" }
     }
 
     sourceSets {
