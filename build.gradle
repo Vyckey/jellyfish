@@ -135,7 +135,8 @@ subprojects {
         testImplementation "org.jmockit:jmockit:$jmockitVersion"
     }
 
-    if (!it.name.contentEquals('jellyfish-contract')) {
+    def excludedModules = ['jddd-core', 'jellyfish-contract']
+    if (!excludedModules.contains(it.name)) {
         dependencies {
             implementation "com.fasterxml.jackson.core:jackson-core:$jacksonVersion"
             implementation "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion"
@@ -158,7 +159,7 @@ subprojects {
         }
     }
 
-    def excludedModules = ['jellyfish-contract', 'jellyfish-domain']
+    excludedModules = ['jddd-core', 'jellyfish-contract', 'jellyfish-domain']
     if (!excludedModules.contains(it.name)) {
         dependencies {
             implementation "org.springframework.boot:spring-boot-starter:$springBootVersion"
@@ -171,7 +172,12 @@ subprojects {
     }
 }
 
+project(":jddd-core") {
+    version = '0.0.1'
+    dependencies {
 
+    }
+}
 
 project(":jellyfish-contract") {
     version = '0.0.1-SNAPSHOT'
@@ -182,7 +188,7 @@ project(":jellyfish-contract") {
 
 project(":jellyfish-domain") {
     dependencies {
-
+        implementation project(":jddd-core")
     }
 }
 

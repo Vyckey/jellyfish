@@ -1,6 +1,4 @@
-package com.hoily.service.domain.model.event;
-
-import java.util.function.Consumer;
+package com.hoily.jddd.core.event;
 
 /**
  * A {@link DomainEventSubscriber} Implementation

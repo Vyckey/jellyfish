@@ -1,5 +1,6 @@
 rootProject.name = 'jellyfish'
 
+include 'jddd-core'
 include 'jellyfish-domain'
 include 'jellyfish-infrastructure'
 include 'jellyfish-application'

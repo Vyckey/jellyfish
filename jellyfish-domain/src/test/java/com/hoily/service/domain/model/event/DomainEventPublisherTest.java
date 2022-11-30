@@ -1,6 +1,9 @@
 package com.hoily.service.domain.model.event;
 
 import com.google.common.collect.Lists;
+import com.hoily.jddd.core.event.DomainEvent;
+import com.hoily.jddd.core.event.DomainEventPublisher;
+import com.hoily.jddd.core.event.DomainEventSubscriber;
 import org.junit.Assert;
 import org.junit.Test;
 

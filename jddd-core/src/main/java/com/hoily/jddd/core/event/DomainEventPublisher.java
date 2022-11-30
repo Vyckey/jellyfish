@@ -1,4 +1,4 @@
-package com.hoily.service.domain.model.event;
+package com.hoily.jddd.core.event;
 
 import java.util.ArrayList;
 import java.util.List;
